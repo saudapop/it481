@@ -36,6 +36,6 @@ npm i;
 npm run dev
 ```
 
-<img src="./screenshots/blankui.png" width="500px">
-<img src="./screenshots/customerdata.png" width="500px">
+<img src="./screenshots/blankui.png" width="1080px">
+<img src="./screenshots/customerdata.png" width="1080px">
 
