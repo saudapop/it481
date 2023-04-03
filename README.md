@@ -1,7 +1,7 @@
 # it481
 This is the application built for assignments for IT481 Advanced Software Development for Purdue University Global
 
-The Application is built on the (Northwind database)[https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs] and assumes that you have it running.
+The Application is built on the [Northwind database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs) and assumes that you have it running.
 
 #### Server
 ```bash
