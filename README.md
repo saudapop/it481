@@ -3,7 +3,7 @@ This is the application built for assignments for IT481 Advanced Software Develo
 
 The Application is built on the [Northwind database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs) and assumes that you have it running.
 
-#### Run the server
+## Run the server
 
 Note that the `SERVER`, `USERNAME`, and `PASSWORD` are read from environment variables. Create a `.env` file in the root of the project and enter your values. It should look something like this:
 
@@ -39,7 +39,7 @@ Output:
 Hello World!
 ```
 
-#### Client 
+## Run the client (GUI)
 ```
 cd ui;
 npm i;
