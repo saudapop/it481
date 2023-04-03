@@ -21,6 +21,7 @@ Example app listening on port 3005
 ```
 
 You can then run this command to verify the server is running
+
 `~/repos/it481 > curl -s -L 'localhost:3005/'`
 
 Output:
@@ -35,4 +36,6 @@ npm i;
 npm run dev
 ```
 
+<img src="./screenshots/blankui.png" width="500px">
+<img src="./screenshots/customerdata.png" width="500px">
 
