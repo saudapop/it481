@@ -3,7 +3,17 @@ This is the application built for assignments for IT481 Advanced Software Develo
 
 The Application is built on the [Northwind database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs) and assumes that you have it running.
 
-#### Server
+#### Run the server
+
+Note that the `SERVER`, `USERNAME`, and `PASSWORD` are read from environment variables. Create a `.env` file in the root of the project and enter your values. It should look something like this:
+
+```
+# .env file example
+SERVER="localhost"
+USERNAME="sa"
+PASSWORD="reallyStrongPwd123"
+```
+
 ```bash
 npm i;
 npm start
