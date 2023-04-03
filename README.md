@@ -32,7 +32,9 @@ Example app listening on port 3005
 
 You can then run this command to verify the server is running
 
-`~/repos/it481 > curl -s -L 'localhost:3005/'`
+```sh
+$ curl -s -L 'localhost:3005/'
+```
 
 Output:
 ```
