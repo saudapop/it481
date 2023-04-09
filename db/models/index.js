@@ -1,8 +1,5 @@
 const initCustomer = require('./customer');
+const initEmployee = require('./employee');
+const initOrder = require('./order');
 
-function initModels(db) {
-  const Customer = initCustomer(db);
-  return { Customer };
-}
-
-module.exports = initModels;
+module.exports = { initCustomer, initEmployee, initOrder };

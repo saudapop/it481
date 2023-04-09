@@ -1,0 +1,5 @@
+export const TABLES = {
+  EMPLOYEES: 'EMPLOYEES',
+  ORDERS: 'ORDERS',
+  CUSTOMERS: 'CUSTOMERS',
+};

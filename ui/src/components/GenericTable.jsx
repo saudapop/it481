@@ -5,22 +5,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Tooltip from '@mui/material/Tooltip';
+import { TABLE_HEADERS } from '../constants';
 
-const TableHeaders = [
-  'CustomerID',
-  'CompanyName',
-  'ContactName',
-  'ContactTitle',
-  'Address',
-  'City',
-  'Region',
-  'PostalCode',
-  'Country',
-  'Phone',
-  'Fax',
-];
+export function GenericTable({ data, currentTable }) {
+  const TableHeaders = TABLE_HEADERS[currentTable];
 
-export function CustomersTable({ data }) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -34,11 +24,15 @@ export function CustomersTable({ data }) {
         <TableBody>
           {data.map((row) => (
             <TableRow
-              key={row.CustomerID}
+              key={row[TableHeaders[0]]}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               {TableHeaders.map((header) => (
-                <TableCell>{row[header]}</TableCell>
+                <TableCell>
+                  <Tooltip title={String(row[header])}>
+                    <div>{String(row[header]).slice(0, 30)}</div>
+                  </Tooltip>
+                </TableCell>
               ))}
             </TableRow>
           ))}
