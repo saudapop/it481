@@ -1,23 +1,42 @@
-import { useState } from 'react';
-import { getCustomers } from './requests';
+import { useAppContext } from './context';
+
+import { AuthScreen } from './components/AuthScreen';
+import { DataScreen } from './components/DataScreen';
+
 import './App.css';
-import { CustomersTable } from './CustomersTable';
-
 function App() {
-  const [data, setData] = useState();
+  const { state, setState } = useAppContext();
 
-  async function getData() {
-    const result = await getCustomers();
-    setData(result);
+  const { isAuthenticated, credentials, role } = state;
+
+  function logOut() {
+    setState({
+      data: null,
+      isAuthenticated: false,
+      credentials: { user: '', password: '' },
+      role: null,
+    });
   }
+
   return (
     <div className="App">
-      <h1>IT481 Unit 2 Assignment Application</h1>
-      <p>Saud Ahmed</p>
-      <div className="card">
-        <button onClick={getData}>get customer data</button>
-        {data && <CustomersTable data={data} />}
-      </div>
+      {!isAuthenticated && (
+        <>
+          <h1>IT481 Application</h1>
+          <p>Saud Ahmed</p>
+        </>
+      )}
+      {isAuthenticated && (
+        <div>
+          <p>
+            Logged in as user <b>{credentials.user}</b>
+            with role <b>{role}</b>
+          </p>
+          <button onClick={logOut}>log out</button>
+        </div>
+      )}
+      {!isAuthenticated && <AuthScreen />}
+      {isAuthenticated && <DataScreen />}
     </div>
   );
 }

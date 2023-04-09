@@ -36,6 +36,16 @@
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
+.login {
+  display: flex;
+  justify-content: center;
+}
+.login .inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.login .input {
+  display: flex;
+  justify-content: space-between;
 }
