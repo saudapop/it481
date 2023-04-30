@@ -4,14 +4,14 @@ const { Sequelize } = require('sequelize');
 const cors = require('cors');
 const { initCustomer, initEmployee, initOrder } = require('./db/models');
 
-const port = 3005;
+const { SERVER, PORT } = process.env;
 
-const { SERVER } = process.env;
+const port = PORT || 3005;
 
 async function loginDb(req) {
-  const { user, password } = req.body;
+  const { user, password, serverAddress } = req.body;
   const sequelize = new Sequelize('Northwind', user, password, {
-    host: SERVER,
+    host: serverAddress || SERVER,
     dialect: 'mssql',
   });
   await sequelize.authenticate();
